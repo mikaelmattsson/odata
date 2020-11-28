@@ -9,5 +9,5 @@ export declare class ODataResponse<T> {
     readonly entity: T;
     readonly entities: T[];
     constructor(response: AxiosResponse);
-    readonly containsMultipleEntities: boolean;
+    get containsMultipleEntities(): boolean;
 }

@@ -56,6 +56,55 @@ export class ODataRequest<T> {
         return this;
     }
 
+    public orderby(orderby: string, direction?: string ): ODataRequest<T> {
+        if (this.config.method !== "GET") {
+            throw Error("Invalid request method for 'orderby'");
+        }
+        this.config.params.$orderby = orderby;
+
+        if (direction) {
+            this.config.params.$orderby += " " + direction;
+        }
+        return this;
+    }
+
+    public top(top: number | string): ODataRequest<T> {
+        if (this.config.method !== "GET") {
+            throw Error("Invalid request method for 'top'");
+        }
+        this.config.params.$top = top;
+        return this;
+    }
+
+    public skip(skip: number | string): ODataRequest<T> {
+        if (this.config.method !== "GET") {
+            throw Error("Invalid request method for 'skip'");
+        }
+        this.config.params.$skip = skip;
+        return this;
+    }
+
+    public count(count: boolean): ODataRequest<T> {
+        if (this.config.method !== "GET") {
+            throw Error("Invalid request method for 'count'");
+        }
+        this.config.params.$count = count ? "true" : "false";
+        return this;
+    }
+
+    public search(search: string): ODataRequest<T> {
+        if (this.config.method !== "GET") {
+            throw Error("Invalid request method for 'search'");
+        }
+        this.config.params.$search = search;
+        return this;
+    }
+
+    public param(key: string, value: string | number): ODataRequest<T> {
+        this.config.params[key] = value;
+        return this;
+    }
+
     public ref(nevigationProperty: string, entity: string, id: number | string): ODataRequest<T> {
         if (this.config.method !== "POST" && this.config.method !== "PUT") {
             throw Error("Invalid request method for 'ref'");

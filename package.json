@@ -1,16 +1,16 @@
 {
-    "name": "@zhevron/odata",
-    "version": "0.4.4",
+    "name": "@mikaelmattsson/odata",
+    "version": "0.4.7",
     "description": "OData v4 client",
-    "author": "Thomas Lokshall <thomas@lokshall.no>",
+    "author": "Thomas Lokshall <thomas@lokshall.no>, Mikael Mattsson",
     "license": "(MIT OR Apache-2.0)",
-    "homepage": "https://github.com/zhevron/odata#readme",
+    "homepage": "https://github.com/mikaelmattsson/odata#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/zhevron/odata.git"
+        "url": "git+https://github.com/mikaelmattsson/odata.git"
     },
     "bugs": {
-        "url": "https://github.com/zhevron/odata/issues"
+        "url": "https://github.com/mikaelmattsson/odata/issues"
     },
     "dependencies": {
         "axios": "^0.18.1",
